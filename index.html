@@ -1,7 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hello World</title>
+<title>Help Center</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Start of fleek7176 Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=017fac16-3bdd-4925-9c41-61dc95014625"> </script>
+<!-- End of fleek7176 Zendesk Widget script -->
+
+<!-- <script>  window.zESettings = {
+    webWidget: {
+      contactForm: {
+        attachments: true,
+        ticketForms: [
+          {
+            id: 5735879306525,
+            fields: [
+              {
+                id: 5745304791965,
+                prefill: {
+                  '*': 'fleek'
+                },
+                display: false
+              }
+            ]
+      }]
+    }
+  }
+  };
+  </script> -->
+  <script>
+  // on-click of the web widget the following code will run
+  zE('webWidget:on', 'open', function() {
+    // creates any CSS to be added to the Web Widget
+    var style = document.createElement('style');
+      style.innerHTML = `
+        /* hides the zendesk branding */
+        /* inspect the link using developer tools to get the correct class */
+        .bJlzcx {
+          visibility: hidden !important;
+        }
+        /* uncomment the code to hide the section you would like to hide */
+        /* the div:nth-child(?) will change based on how many fields you have change the number to match your field */
+        /* inspect using developer tools to get the correct identifier */
+        /* hides a field */
+        /* the div:nth-child(?) will change based on field you would like to hide */
+        /* inspect using developer tools to get the correct identifier */
+      #Embed > div > div > div > div > form > main > div.styles__Fields-sc-cb953b-1.gJkjOz > div:nth-child(5) {
+          display: none;
+        }
+        `;
+    // appends the CSS in the web widget
+    parent.document.getElementById('webWidget').contentDocument.head.appendChild(style);
+  });
+</script>
+<!-- End of fleek7176 Zendesk Widget script -->
 </head>
 <body>
 
